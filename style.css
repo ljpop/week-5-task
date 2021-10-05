@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  --blue: #0079ff;
+
+  /*Light mode*/
+  --gray-light-mode: #697c9a;
+  --blue-gray-light-mode: #4b6a9b;
+  --black-light-mode: #2b3442;
+  --white-gray-light-mode: #f6f8ff;
+  --white-light-mode: #fefefe;
+
+  /*Dark mode*/
+  --white-dark-mode: #fff;
+  --black-dark-mode: #f6f8ff;
+  --blue-black-dark-mode: #1e2a47;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  font-size: 15px;
+  line-height: 25px;
+}
+
+h1 {
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+h2 {
+  /*TODO: nema u html*/
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 13px;
+  line-height: 19.25px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.light-mode {
+  /* border: 2px solid blue; */
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.light {
+}
+
+.dark {
+  display: none;
+}
+
+.display {
+  /*TODO: add this class*/
+  display: none;
+}
+
+.errorMessage {
+  display: none;
+}
+
+form {
+  outline: none;
+  width: 100%;
+  display: flex;
+  border-radius: 15px;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+button {
+  padding: 12.5px 14px 12.5px 18px;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.input-user {
+  padding: 18px 0px 17px 45px;
+  outline: none;
+  border-radius: 15px;
+  border-color: transparent;
+  flex: 1;
+}
+
+.container {
+  /* border: 2px solid red; */
+  max-width: 730px;
+  width: 80%;
+  margin: 144px auto 170px auto;
+}
+
+.header {
+  border: 2px solid yellow;
+  display: flex;
+  margin-bottom: 35px;
+  align-items: top;
+  justify-content: space-between;
+}
+
+.search-box {
+  border: 2px solid pink;
+}
+
+.user-container {
+  border: 2px solid green;
+}
+
+.user-header {
+  border: 2px solid black;
+}
+
+.about {
+  border: 2px solid cornflowerblue;
+}
+
+.statistics {
+  border: 2px solid purple;
+}
+
+.links {
+  border: 2px solid yellowgreen;
+}

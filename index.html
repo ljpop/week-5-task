@@ -16,17 +16,25 @@
     <div class="container">
       <div class="header">
         <h1>devfinder</h1>
-        <div class="light">Light Dark</div>
+        <div class="light-mode light">
+          <h5>Dark</h5>
+          <img src="assets/icon-moon.svg" />
+        </div>
+        <div class="light-mode dark">
+          <h5>Light</h5>
+          <img src="assets/icon-sun.svg" />
+        </div>
       </div>
       <form class="search-box">
-        <input placeholder="Search GitHub username..." />
+        <input class="input-user" placeholder="Search GitHub username..." />
+        <p class="errorMessage">Lorem ipsum!</p>
         <button>Search</button>
       </form>
       <div class="user-container">
         <div class="user-header">
           <img src="avatar.png" class="avatar" alt="avatar" />
-          <h2>The Octocat</h2>
-          <h3>aoctocat</h3>
+          <h1>The Octocat</h1>
+          <h3>@octocat</h3>
           <p>Joined <span>25 Jan 2011</span></p>
         </div>
         <div class="about">
@@ -35,15 +43,15 @@
         </div>
         <div class="statistics">
           <div class="info">
-            <div class="label-stat">Repos</div>
+            <h4>Repos</h4>
             <div class="number-stat">8</div>
           </div>
           <div class="info">
-            <div class="label-stat">Followers</div>
+            <h4>Followers</h4>
             <div class="number-stat">3938</div>
           </div>
           <div class="info">
-            <div class="label-stat">Following</div>
+            <h4>Following</h4>
             <div class="number-stat">9</div>
           </div>
         </div>
