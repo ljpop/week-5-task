@@ -83,6 +83,10 @@ h5 {
   display: none;
 }
 
+.visible {
+  display: inline-block;
+}
+
 form {
   outline: none;
   width: 100%;

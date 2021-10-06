@@ -25,52 +25,56 @@
           <img src="assets/icon-sun.svg" />
         </div>
       </div>
-      <form class="search-box">
-        <input class="input-user" placeholder="Search GitHub username..." />
-        <p class="errorMessage">Lorem ipsum!</p>
-        <button>Search</button>
+      <form class="search-box" autocomplete="off">
+        <input
+          id="username"
+          class="input-user"
+          placeholder="Search GitHub username..."
+        />
+        <p class="errorMessage">No results</p>
+        <button onclick="doSearch(event)">Search</button>
       </form>
       <div class="user-container">
         <div class="user-header">
-          <img src="avatar.png" class="avatar" alt="avatar" />
-          <h1>The Octocat</h1>
-          <h3>@octocat</h3>
-          <p>Joined <span>25 Jan 2011</span></p>
+          <img id="avatar" src="avatar.png" class="avatar" alt="avatar" />
+          <h1 id="name">The Octocat</h1>
+          <h3 id="login">@octocat</h3>
+          <p>Joined <span id="date_created">25 Jan 2011</span></p>
         </div>
-        <div class="about">
+        <div id="bio" class="about">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Donec idui,
           Quisque volutpat mattis eros.
         </div>
         <div class="statistics">
           <div class="info">
             <h4>Repos</h4>
-            <div class="number-stat">8</div>
+            <div id="reposNum" class="number-stat">8</div>
           </div>
           <div class="info">
             <h4>Followers</h4>
-            <div class="number-stat">3938</div>
+            <div id="followers" class="number-stat">3938</div>
           </div>
           <div class="info">
             <h4>Following</h4>
-            <div class="number-stat">9</div>
+            <div id="following" class="number-stat">9</div>
           </div>
         </div>
         <div class="links">
           <div class="link">
             <div class="icon">Icon</div>
-            <div class="link-info">San Francisco</div>
+            <div id="location" class="link-info">San Francisco</div>
           </div>
           <div class="link">
             <div class="icon">Icon</div>
-            <div class="link-info">https://github.blog</div>
+            <div id="blog" class="link-info">https://github.blog</div>
           </div>
           <div class="link">
             <div class="icon">Icon</div>
-            <div class="link-info">Not Available</div>
+            <div id="twitter" class="link-info">Not Available</div>
           </div>
           <div class="link">
             <div class="icon">Icon</div>
-            <div class="link-info">@github</div>
+            <div id="company" class="link-info">@github</div>
           </div>
         </div>
       </div>
