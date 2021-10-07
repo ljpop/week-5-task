@@ -13,15 +13,11 @@ const getText = function (id, data, error) {
   else document.getElementById(id).textContent = error;
 };
 
-//---------------------------------------------------------//
-
-let username = "ljpop";
-
 //----------Form----------------------------------//
 const doSearch = function (event) {
   event.preventDefault();
 
-  username = document.getElementById("username").value;
+  const username = document.getElementById("username").value;
   const GIT_URL = "https://api.github.com/users/" + username;
   const promise = fetch(GIT_URL);
 
@@ -49,6 +45,7 @@ const doSearch = function (event) {
         getText("followers", data.followers, "0");
         getText("following", data.following, "0");
         getText("location", data.location, "Not Available");
+        document.getElementById("link-blog").href = data.blog;
         getText("blog", data.blog, "Not Available");
         getText("bio", data.bio, "This profile has no bio");
         getText("twitter", data.twitter_username, "Not Available");

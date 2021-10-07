@@ -1,21 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
 :root {
-  --blue: #0079ff;
-
   /*Light mode*/
   --gray-light-mode: #697c9a;
   --blue-gray-light-mode: #4b6a9b;
   --black-light-mode: #2b3442;
-  --white-gray-light-mode: #f6f8ff;
-  --white-light-mode: #fefefe;
+  --white-gray-light-mode: #f6f8ff; /*TODO:*/
+  --white-light-mode: #fefefe; /*TODO:*/
 
   /*Dark mode*/
   --white-dark-mode: #fff;
-  --black-dark-mode: #f6f8ff;
+  --black-dark-mode: #141d2f; /*BUG: error figma*/
   --blue-black-dark-mode: #1e2a47;
+
+  --body: #f6f8ff;
+  --content: #fefefe;
+  --text: #4b6a9b;
+  --text-bold: #2b3442;
+
+  --blue: #0079ff;
 }
 
+body,
+.statistics {
+  background-color: var(--body);
+  color: var(--text);
+}
+
+form,
+.user-container {
+  background-color: var(--content);
+}
+
+h1 {
+  color: var(--text-bold);
+}
+
+h3 {
+  color: var(--blue);
+}
+
+button {
+  background-color: var(--blue);
+  color: var(--content);
+}
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +54,15 @@
 body {
   font-size: 15px;
   line-height: 25px;
+  /* background-color: var(--white-gray-light-mode); */
+}
+
+body.dark-lights {
+  /* background-color: var(--black-black-mode); */
+}
+
+.container.dark-lights {
+  /* background-color: var(--blue-black-dark-mode); */
 }
 
 h1 {
@@ -93,24 +130,40 @@ form {
   display: flex;
   border-radius: 15px;
   justify-content: space-between;
-  align-items: stretch;
+  margin-bottom: 24px;
+  align-items: baseline;
 }
 
 button {
-  padding: 12.5px 14px 12.5px 18px;
-  font-size: 14px;
+  padding: 12.5px 24px 12.5px 24px;
+  font-size: 16px;
   line-height: 21px;
   font-weight: 700;
   cursor: pointer;
-  background-color: transparent;
+  border-radius: 15px;
+  border: 0px;
 }
 
 .input-user {
-  padding: 18px 0px 17px 45px;
+  padding: 18px 0px 17px 80px;
   outline: none;
   border-radius: 15px;
   border-color: transparent;
   flex: 1;
+  background-image: url("/assets/icon-search.svg");
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: 32px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.user-header img {
+  max-width: 170px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .container {
@@ -121,7 +174,7 @@ button {
 }
 
 .header {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   display: flex;
   margin-bottom: 35px;
   align-items: top;
@@ -129,7 +182,7 @@ button {
 }
 
 .search-box {
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
 }
 
 .user-container {
@@ -146,8 +199,81 @@ button {
 
 .statistics {
   border: 2px solid purple;
+  display: flex;
+  justify-content: center;
+  /* padding-left: 32px;
+  margin-left: 72px; */
 }
 
 .links {
   border: 2px solid yellowgreen;
+  display: grid;
+
+  grid-template-areas:
+    "location twitter"
+    "blog company";
+}
+
+.link-info {
+  background-repeat: no-repeat;
+  padding-left: 33px;
+
+  /* margin-bottom: 15px; /*TODO:*/
+}
+
+#company {
+  grid-area: "company";
+  background-image: url("assets/icon-company.svg");
+}
+
+#twitter {
+  grid-area: "twitter";
+  background-image: url("assets/icon-twitter.svg");
+}
+
+#location {
+  grid-area: "location";
+  background-image: url("assets/icon-location.svg");
+}
+
+#blog {
+  grid-area: "blog";
+  cursor: pointer;
+  background-image: url("assets/icon-website.svg");
+}
+
+a:link,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 850px) {
+  .user-header img {
+    max-width: 117px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .input-user {
+    padding: 18px 0px 17px 45px;
+    background-position-y: 50%;
+    background-position-x: 16px;
+  }
+
+  .user-header img {
+    max-width: 70px;
+  }
+
+  .links {
+    grid-template-areas:
+      "location"
+      "twitter"
+      "blog"
+      "company";
+  }
 }
