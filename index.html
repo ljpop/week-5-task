@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>GitHub user search</title>
   </head>
-  <body class="dark-lights">
+  <body>
     <div class="container dark-lights">
       <div class="header">
         <h1>devfinder</h1>
@@ -27,6 +27,7 @@
       </div>
       <form class="search-box" autocomplete="off">
         <input
+          oninput="removeError()"
           id="username"
           class="input-user"
           placeholder="Search GitHub username..."
@@ -34,9 +35,9 @@
         <p class="errorMessage">No results</p>
         <button onclick="doSearch(event)">Search</button>
       </form>
-      <div class="user-container">
+      <div class="user-container grid">
+        <img id="avatar" src="avatar.png" class="avatar" alt="avatar" />
         <div class="user-header">
-          <img id="avatar" src="avatar.png" class="avatar" alt="avatar" />
           <h1 id="name">The Octocat</h1>
           <h3 id="login">@octocat</h3>
           <p>Joined <span id="date_created">25 Jan 2011</span></p>
