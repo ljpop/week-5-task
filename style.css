@@ -1,0 +1,423 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  /*Light mode*/
+  --gray-light-mode: #697c9a;
+  --blue-gray-light-mode: #4b6a9b;
+  --black-light-mode: #2b3442;
+  --white-gray-light-mode: #f6f8ff; /*TODO:*/
+  --white-light-mode: #fefefe; /*TODO:*/
+
+  /*Dark mode*/
+  --white-dark-mode: #fff;
+  --black-dark-mode: #141d2f; /*BUG: error figma*/
+  --blue-black-dark-mode: #1e2a47;
+
+  --body: #f6f8ff;
+  --content: #fefefe;
+  --text: #4b6a9b;
+  --text-bold: #2b3442;
+
+  --blue: #0079ff;
+  --button-hover: #60abff;
+  --red: #f74646;
+
+  --body-dark: #141d2f;
+  --text-white: #fff;
+}
+
+/*TODO: shadows*/
+
+body,
+.statistics {
+  background-color: var(--body);
+  color: var(--text);
+}
+
+.number-stat {
+  color: var(--black-dark-mode);
+}
+
+body.darkmode,
+.statistics.darkmode,
+.number-stat.darkmode {
+  background-color: var(--body-dark);
+  color: var(--text-white);
+}
+
+form,
+.user-container {
+  background-color: var(--content);
+}
+
+h1 {
+  color: var(--text-bold);
+}
+
+h1.darkmode {
+  color: var(--text-white);
+}
+
+h3 {
+  color: var(--blue);
+}
+
+button {
+  background-color: var(--blue);
+  color: var(--content);
+}
+
+.user-container.darkmode,
+form.darkmode,
+input.darkmode {
+  background-color: var(--blue-black-dark-mode);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  font-size: 15px;
+  line-height: 25px;
+  /* background-color: var(--white-gray-light-mode); */
+}
+
+body.dark-lights {
+  /* background-color: var(--black-black-mode); */
+}
+
+.container.dark-lights {
+  /* background-color: var(--blue-black-dark-mode); */
+}
+
+h1 {
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+#name {
+  grid-area: "h1";
+}
+
+#login {
+  grid-area: "user";
+
+  order: 3;
+}
+
+h2 {
+  /*TODO: nema u html*/
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 13px;
+  line-height: 19.25px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.light-mode {
+  /* border: 2px solid blue; */
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.light {
+  /* display: none; */
+}
+
+.dark {
+  /* display: none; */
+}
+
+.display {
+  /*TODO: add this class*/
+  display: none;
+}
+
+.errorMessage {
+  display: none;
+}
+
+.visible {
+  display: inline-block;
+  margin-right: 24px;
+  color: var(--red);
+  font-weight: 700;
+}
+
+.avatar-small {
+  display: none;
+}
+
+.avatar {
+  max-width: 117px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin-left: 48px;
+}
+
+.user-container {
+  display: flex;
+  gap: 37px;
+  padding-top: 48px;
+  justify-content: left;
+}
+
+.date-joined {
+  grid-area: "date";
+  order: 2;
+}
+.text-user-header {
+  display: grid;
+  grid-template-areas:
+    "h1 date"
+    "user user";
+}
+
+form {
+  outline: none;
+  width: 100%;
+  display: flex;
+  border-radius: 15px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  align-items: baseline;
+}
+
+button {
+  padding: 14px 24px 14px 24px;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 15px;
+  border: 0px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+.input-user {
+  padding: 18px 0px 17px 80px;
+  outline: none;
+  border-radius: 15px;
+  border-color: transparent;
+  flex: 1;
+  background-image: url("/assets/icon-search.svg");
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: 32px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.container {
+  /* border: 2px solid red; */
+  max-width: 730px;
+  width: 80%;
+  margin: 144px auto 170px auto;
+}
+
+.header {
+  /* border: 2px solid yellow; */
+  display: flex;
+  margin-bottom: 35px;
+  align-items: top;
+  justify-content: space-between;
+}
+
+.statistics {
+  grid-area: "statistics";
+  display: flex;
+  justify-content: center;
+}
+
+.links {
+  grid-area: "links";
+  display: grid;
+
+  grid-template-areas:
+    "location twitter"
+    "blog company";
+}
+
+.link-info {
+  background-repeat: no-repeat;
+  padding-left: 33px;
+  margin-top: 15px;
+}
+
+#company {
+  grid-area: "company";
+  background-image: url("assets/icon-company.svg");
+}
+
+#twitter {
+  grid-area: "twitter";
+  background-image: url("assets/icon-twitter.svg");
+}
+
+#location {
+  grid-area: "location";
+  background-image: url("assets/icon-location.svg");
+}
+
+#blog {
+  grid-area: "blog";
+  cursor: pointer;
+  background-image: url("assets/icon-website.svg");
+}
+
+a:link,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.number-stat {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 850px) {
+  .date-joined {
+    order: 3;
+  }
+  #login {
+    order: 2;
+  }
+  .text-user-header {
+    grid-template-areas:
+      "h1"
+      "user"
+      "date";
+  }
+  .avatar {
+    max-width: 117px;
+    margin-left: 0px;
+  }
+
+  .user-header {
+    display: flex;
+  }
+  .user-container {
+    padding-top: 40px;
+
+    justify-content: center;
+  }
+  .text-content {
+    margin: 40px;
+    margin-top: 0px;
+  }
+
+  .avatar-small {
+    display: inherit;
+  }
+
+  .avatar-big {
+    display: none;
+  }
+
+  .statistics {
+    margin: 0 40px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .user-container {
+    padding-top: 0px;
+  }
+
+  .input-user {
+    width: 30%;
+  }
+
+  .statistics {
+    margin: 0 24px;
+  }
+
+  .text-content {
+    margin: 33px 24px 48px 24px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .visible {
+    margin-right: 10px;
+  }
+
+  .input-user {
+    padding: 16px 0px 16px 45px;
+    background-position-y: 50%;
+    background-position-x: 16px;
+    font-size: 13px;
+    background-size: 20px;
+  }
+
+  button {
+    padding: 14px 10px;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 10px;
+    margin-right: 5px;
+  }
+  .avatar {
+    max-width: 70px;
+  }
+
+  .container {
+    width: calc(100% - 48px);
+    margin: 31px 24px 79px 24px;
+  }
+
+  .links {
+    grid-template-areas:
+      "location"
+      "twitter"
+      "blog"
+      "company";
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .input-user {
+    background-position-x: 5px;
+  }
+
+  button {
+    padding: 14px 12px;
+  }
+  .visible {
+    margin-right: 5px;
+  }
+}
