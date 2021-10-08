@@ -13,14 +13,14 @@
     <title>GitHub user search</title>
   </head>
   <body>
-    <div class="container dark-lights">
+    <div class="container">
       <div class="header">
         <h1>devfinder</h1>
-        <div class="light-mode light">
+        <div onClick="changeTheme()" class="light-mode light">
           <h5>Dark</h5>
           <img src="assets/icon-moon.svg" />
         </div>
-        <div class="light-mode dark">
+        <div onClick="changeTheme()" class="light-mode dark display">
           <h5>Light</h5>
           <img src="assets/icon-sun.svg" />
         </div>
@@ -35,38 +35,53 @@
         <p class="errorMessage">No results</p>
         <button onclick="doSearch(event)">Search</button>
       </form>
-      <div class="user-container grid">
-        <img id="avatar" src="avatar.png" class="avatar" alt="avatar" />
-        <div class="user-header">
-          <h1 id="name">The Octocat</h1>
-          <h3 id="login">@octocat</h3>
-          <p>Joined <span id="date_created">25 Jan 2011</span></p>
-        </div>
-        <div id="bio" class="about">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Donec idui,
-          Quisque volutpat mattis eros.
-        </div>
-        <div class="statistics">
-          <div class="info">
-            <h4>Repos</h4>
-            <div id="reposNum" class="number-stat">8</div>
+      <div class="user-container">
+        <img id="avatar" src="avatar.png" class="avatar-big avatar" alt="avatar" />
+        <div class="text-content">
+          <div class="user-header">
+            <img
+              id="avatar"
+              src="avatar.png"
+              class="avatar-small avatar"
+              alt="avatar"
+            />
+            <div class="text-user-header">
+              <h1 id="name">The Octocat</h1>
+              <p class="date-joined">
+                Joined <span id="date_created">25 Jan 2011</span>
+              </p>
+
+              <h3 id="login">@octocat</h3>
+            </div>
           </div>
-          <div class="info">
-            <h4>Followers</h4>
-            <div id="followers" class="number-stat">3938</div>
+          <div id="bio" class="about">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Donec idui,
+            Quisque volutpat mattis eros.
           </div>
-          <div class="info">
-            <h4>Following</h4>
-            <div id="following" class="number-stat">9</div>
+          <div class="statistics">
+            <div class="info">
+              <h4>Repos</h4>
+              <div id="reposNum" class="number-stat">8</div>
+            </div>
+            <div class="info">
+              <h4>Followers</h4>
+              <div id="followers" class="number-stat">3938</div>
+            </div>
+            <div class="info">
+              <h4>Following</h4>
+              <div id="following" class="number-stat">9</div>
+            </div>
           </div>
-        </div>
-        <div class="links">
-          <div id="location" class="link-info">San Francisco</div>
-          <div id="twitter" class="link-info">Not Available</div>
-          <div id="blog" class="link-info">
-            <a id="link-blog" href="https://github.blog">https://github.blog</a>
+          <div class="links">
+            <div id="location" class="link-info">San Francisco</div>
+            <div id="twitter" class="link-info">Not Available</div>
+            <div id="blog" class="link-info">
+              <a id="link-blog" href="https://github.blog"
+                >https://github.blog</a
+              >
+            </div>
+            <div id="company" class="link-info">@github</div>
           </div>
-          <div id="company" class="link-info">@github</div>
         </div>
       </div>
     </div>

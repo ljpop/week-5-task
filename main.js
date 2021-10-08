@@ -8,37 +8,64 @@ if (
   darkModeProperties();
 }
 
-document.querySelector(".light-mode").addEventListener("click", function () {
+const changeTheme = function () {
   if (darkMode == false) {
     darkModeProperties();
+
+    console.log("Tamna TEMA");
   } else {
     lightModeProperties();
+    console.log("SVETLA TEMA");
   }
-});
+};
+
+const addTheme = function (selector) {
+  if (selector.length == 1)
+    document.querySelector(selector).classList.add("darkmode");
+  else
+    document
+      .querySelectorAll(selector)
+      .forEach((el) => el.classList.add("darkmode"));
+};
+
+const removeTheme = function (selector) {
+  if (selector.length == 1)
+    document.querySelector(selector).classList.remove("darkmode");
+  else
+    document
+      .querySelectorAll(selector)
+      .forEach((el) => el.classList.remove("darkmode"));
+};
 
 function darkModeProperties() {
-  document.querySelector("body").classList.add("darkmode");
-  document.querySelector(".statistics").classList.add("darkmode");
-  document.querySelectorAll(".number-stat").classList.add("darkmode"); /*TODO:*/
-  // root.setProperty("--lm-bg", "#141D2F");
-  // root.setProperty("--lm-bg-content", "#1E2A47");
-  // root.setProperty("--lm-text", "white");
-  // root.setProperty("--lm-text-alt", "white");
-  // root.setProperty("--lm-shadow-xl", "rgba(70,88,109,0.15)");
-  // modetext.innerText = "LIGHT";
-  // modeicon.src = "./assets/icon-sun.svg";
-  // root.setProperty("--lm-icon-bg", "brightness(1000%)");
+  addTheme("body");
+  addTheme(".statistics");
+  addTheme(".number-stat");
+  addTheme("h1");
+  addTheme(".user-container");
+  addTheme("form");
+  addTheme("link-info");
+  addTheme("input");
+
+  document.querySelector(".light").classList.add("display");
+  document.querySelector(".dark").classList.remove("display");
+
   darkMode = true;
 }
 function lightModeProperties() {
-  // root.setProperty("--lm-bg", "#F6F8FF");
-  // root.setProperty("--lm-bg-content", "#FEFEFE");
-  // root.setProperty("--lm-text", "#4B6A9B");
-  // root.setProperty("--lm-text-alt", "#2B3442");
-  // root.setProperty("--lm-shadow-xl", "rgba(70, 88, 109, 0.25)");
-  // modetext.innerText = "DARK";
-  // modeicon.src = "./assets/icon-moon.svg";
-  // root.setProperty("--lm-icon-bg", "brightness(100%)");
+  removeTheme("body");
+  removeTheme(".statistics");
+  removeTheme(".number-stat");
+  removeTheme("h1");
+  removeTheme("form");
+  removeTheme("input");
+  removeTheme(".user-container");
+
+  removeTheme("link-info");
+
+  document.querySelector(".light").classList.remove("display");
+  document.querySelector(".dark").classList.add("display");
+
   darkMode = false;
 }
 
@@ -68,6 +95,9 @@ const addError = function () {
   document.getElementById("username").value = "";
 };
 
+const getLink = function (id, data) {
+  if (data) document.getElementById(id).href = data.blog;
+};
 //----------Form----------------------------------//
 const doSearch = function (event) {
   event.preventDefault();
@@ -90,7 +120,8 @@ const doSearch = function (event) {
       } else {
         removeError();
         const data = processedResponse;
-        document.getElementById("avatar").src = data.avatar_url;
+        document.querySelector(".avatar-big").src = data.avatar_url;
+        document.querySelector(".avatar-small").src = data.avatar_url;
         getText("name", data.name);
         getText("login", `@${data.login}`);
         getText("company", data.company, "Not Available");
@@ -99,7 +130,7 @@ const doSearch = function (event) {
         getText("followers", data.followers, "0");
         getText("following", data.following, "0");
         getText("location", data.location, "Not Available");
-        document.getElementById("link-blog").href = data.blog;
+        getLink("link-blog", data.blog);
         getText("blog", data.blog, "Not Available");
         getText("bio", data.bio, "This profile has no bio");
         getText("twitter", data.twitter_username, "Not Available");
